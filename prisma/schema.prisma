@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model client {
+  identifier String @id
+  log    log[]
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  is_blacklisted Boolean @default(false)
+}
+
+model blacklist {
+  identifier String @id
+  created_at DateTime @default(now())
+}
+
+model log {
+  id           Int    @id @default(autoincrement())
+  timestamp    DateTime
+  header_size   Int
+  body_size     Int
+  method       String
+  url          String
+  status_code   Int
+  response_time Int?
+  total_time    Int?
+  client   client @relation(fields: [client_identifier], references: [identifier])
+  client_identifier     String
+}
