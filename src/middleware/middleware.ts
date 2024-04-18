@@ -29,6 +29,9 @@ export const middleware = (
     }
   })
 
+  // ========== CALL NEXT ==========
+  next(request, response)
+
   // ========== REQUEST HANLDING ==========
   let bodySize = 0
   const countDataSize = (chunk: Uint8Array) => {

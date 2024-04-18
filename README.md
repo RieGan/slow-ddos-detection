@@ -10,7 +10,7 @@ npm install slow-ddos-detection
 
 ### Database Initialization
 ```bash
-npm run slow-ddos-detection db-init
+DATABASE_URL=postgresql://janedoe:mypassword@localhost:5432/mydb?schema=sample npx slow-ddos-detection db-init
 ```
 
 ### Using as Middleware

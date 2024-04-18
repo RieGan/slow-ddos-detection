@@ -1,6 +1,6 @@
 {
   "name": "slow-ddos-detection",
-  "version": "0.0.1-beta",
+  "version": "0.0.1-beta1",
   "description": "slow ddos dataset generator",
   "main": "dist/index.js",
   "author": "RieGan <ganjarparikesit@gmail.com>",
